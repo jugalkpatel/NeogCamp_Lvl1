@@ -1,3 +1,9 @@
+import fakeFetch from './fakeFetch.js'
+
+// 1 
+// in event handlers and in network calls.
+
+
 // 2
 const getLength = (text) => text.length;
 const strLength = (text, callback) => `OMG! my name is ${callback(text)} char long!`;
@@ -30,3 +36,18 @@ const testPrintAfter = printAfter(3, "Hello, I am bit slow");
 // 1. A, B, C
 // 2. B, A, C
 // 3. A, C, B
+
+
+// 6
+function printbangBang(number) {
+	let time = number;
+	const timer = setInterval(() => {
+		console.log(time -= 1);
+	}, 1000);
+	setTimeout(() => {
+		clearInterval(timer);
+		console.log("bang bang");
+	}, time * 1000)
+	console.log(number); // this is optional so that it look like that counting start from 7;
+}
+printbangBang(7);
